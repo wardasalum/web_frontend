@@ -1,0 +1,141 @@
+form{
+	height:330px;
+}       
+.form-style-9{
+	max-width: 450px;
+	background: #FAFAFA;
+	padding: 30px;
+	margin: 50px auto;
+	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+	border-radius: 10px;
+	border: 6px solid #305A72;
+}
+.form-style-9 ul{
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+.form-style-9 ul li{
+	display: block;
+	margin-bottom: 10px;
+	min-height: 35px;
+}
+.form-style-9 ul li  .field-style{
+	box-sizing: border-box; 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+	padding: 8px;
+	outline: none;
+	border: 1px solid #B0CFE0;
+	
+
+}.form-style-9 ul li  .field-style:focus{
+	box-shadow: 0 0 5px #B0CFE0;
+	border:1px solid #B0CFE0;
+}
+.form-style-9 ul li .field-split{
+	width: 49%;
+}
+.form-style-9 ul li .field-full{
+	width: 100%;
+}
+.form-style-9 ul li input.align-left{
+	float:left;
+}
+
+
+.form-style-9 ul li input[type="button"], 
+.form-style-9 ul li input[type="submit"] {
+	-moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
+	box-shadow: inset 0px 1px 0px 0px #3985B1;
+	background-color: #216288;
+	border: 1px solid #17445E;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	padding: 8px 18px;
+	text-decoration: none;
+	font: 12px Arial, Helvetica, sans-serif;
+}
+.form-style-9 ul li input[type="button"]:hover, 
+.form-style-9 ul li input[type="submit"]:hover {
+	background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+	background-color: #28739E;
+}
+input{
+   float: right;
+}
+select{
+	float: right;
+}
+
+table {
+	width: 70%;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 8px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+
+th {
+	background-color: #f2f2f2;
+}
+
+.center {
+	text-align: center;
+}
+
+.actions {
+	display: flex;
+	justify-content: center;
+}
+
+.btn {
+	margin: 0 5px;
+	padding: 6px 10px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.btn-delete {
+	background-color: #f44336;
+	color: white;
+}
+
+.btn-update {
+	background-color: #4CAF50;
+	color: white;
+}
+
+@media screen and (max-width: 600px) {
+	.btn {
+		margin-top: 5px;
+	}
+}
+#atttable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  #atttable th,
+  #atttable td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .actions button {
+    margin-right: 5px;
+  }
+  
+  @media (max-width: 576px) {
+    .actions button {
+      margin-bottom: 5px;
+      display: block;
+      width: 100%;
+    }
+  }

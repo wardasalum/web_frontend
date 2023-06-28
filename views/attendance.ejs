@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Attendancepage</title>
+  <link rel="stylesheet" type="text/css" href="/styles1.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+  <link href="/css/styles.css" rel="stylesheet" />
+  <link href="/attenstyle.css" rel="stylesheet" />
+  <link href="/css/styles1.css" rel="stylesheet" />
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+</head>
+<body class="sb-nav-fixed">
+  <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <div class="container-fluid px-4">
+      <!-- <center><h1 class="mt-4">STUDENT ATTENDANCE TRACKING</h1></center> -->
+    </div>
+  </nav>
+  <div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+      <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+          <div class="nav">
+            <br><br><br>
+            <a class="nav-link" href="/index">
+              <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+              Dashboard
+            </a>
+            <br>
+            <a class="nav-link" href="/Attendance">
+              <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+              Attendance
+            </a>
+            <br>
+            <a class="nav-link" href="/Lectures">
+              <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+              Lectures
+            </a>
+            <br>
+            <a class="nav-link" href="/Attendance Report">
+              <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+              Attendance Report
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div id="layoutSidenav_content">
+      <main class="main-content">
+        <br>
+        <h2 style="text-align: center;"> Attedance Form</h2>
+        <form class="form-style-9" action="/submit" method="POST">
+          
+
+            <ul>
+                <li>
+                 Leacturer ID: <input type="text" name="username" class="field-style field-split align-right" placeholder="Enter TeacherID" />
+                
+                </li>
+            <li>
+                Student ID:  <input type="text" name="stu" class="field-style field-split align-right" placeholder="Enter studentid" />
+            </li>
+            <li>
+             Year of study:<select class="field-style field-split align-right" name="year" >
+                    <option value="first">First year</option>
+                    <option value="second">Second year</option>
+                    <option value="third">Third year</option>
+                </select>
+            </li>
+            <li>
+                Date:  <input type="date" name="date" class="field-style field-split align-right" placeholder="Enter date" />
+            </li>
+            <li>
+               AttendanceStatus:<select class="field-style field-split align-right" name="status1" >
+                <option value="Present">Present</option>
+                <option value="Absent">Absent</option>
+            </select>
+            </li>
+            <br>
+        
+            <li>
+           <center><button type="submit" >submit</button></center>
+            </li>
+            </ul>
+        </form>  
+            
+      </main>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="js/scripts.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+  <script src="assets/demo/chart-area-demo.js"></script>
+  <script src="assets/demo/chart-bar-demo.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+  <script src="js/datatables-simple-demo.js"></script>
+  <script src="script1.js"></script>
+</body>
+</html>

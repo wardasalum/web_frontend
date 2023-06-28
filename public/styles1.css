@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.summary-card h2{
+    margin-top: 50px;
+}
+
+.summary-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.summary-card .card {
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.summary-card .present {
+    background-color: green;
+}
+.summary-card .lecturer {
+    background-color:blue;
+}
+
+
+.summary-card .absent {
+    background-color: red;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+.summary-card p {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 10px;
+}
