@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <title>Dashboard </title>
-  
+  <title>editncepage</title>
   <link rel="stylesheet" type="text/css" href="/styles1.css">
 
   <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
@@ -15,6 +14,7 @@
   <link href="/attenstyle.css" rel="stylesheet" />
   <link href="/css/styles1.css" rel="stylesheet" />
   <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
 </head>
 <body class="sb-nav-fixed">
   <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -38,9 +38,10 @@
               Attendance
             </a>
             <br>
-            <a class="nav-link" href="/lectures">
+            <a class="nav-link" href="/Lectures">
               <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
               Lectures
+            </a>
             <br>
             <a class="nav-link" href="/attendtable">
               <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
@@ -52,33 +53,53 @@
     </div>
     <div id="layoutSidenav_content">
       <main class="main-content">
-        <div class="summary-card">
-            <div class="card present">
-                <h2>Present</h2>
-                <p id="presentCount">0</p>
-            </div>
-            <div class="card absent">
-                <h2>Absent</h2>
-                <p id="absentCount">0</p>
-            </div>
-            <div class="card lecturer">
-                <h2>Lecturer</h2>
-                <p id="lecturerCount">0</p>
-            </div>
-            </div>
+        <br>
+        <h2 style="text-align: center;"> Attedance Form</h2>
+      
+        <form class="form-style-9" action="/edit1/<%= attend.Id %>"" method="POST">    
 
+            <ul>
+                <li>
+                 Leacturer ID: <input type="text" name="username" value="<%= attend.Id %>"  class="field-style field-split align-right" placeholder="Enter TeacherID" />
+                
+                </li>
+            <li>
+                Student ID:  <input type="text" name="stu" value="<%= attend.stuid%>" class="field-style field-split align-right" placeholder="Enter studentid" />
+            </li>
+            <li>
+             Year of study:<select class="field-style field-split align-right" name="year" value="<%= attend.year %>"  >
+                    <option value="first">First year</option>
+                    <option value="second">Second year</option>
+                    <option value="third">Third year</option>
+                </select>
+            </li>
+            <li>
+                Date:  <input type="date" name="date" value="<%= attend.date %>"class="field-style field-split align-right" placeholder="Enter date" />
+            </li>
+            <li>
+               AttendanceStatus:<select class="field-style field-split align-right" name="status1" value="<%= attend.status %>"  >
+                <option value="Present">Present</option>
+                <option value="Absent">Absent</option>
+            </select>
+            </li>
+            <br>
         
-        
+            <li>
+           <center><button type="submit" >Update</button></center>
+            </li>
+            </ul>
+        </form>  
+            
       </main>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-  <script src="/js/scripts.js"></script>
+  <script src="js/scripts.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-  <script src="/assets/demo/chart-area-demo.js"></script>
-  <script src="/assets/demo/chart-bar-demo.js"></script>
+  <script src="assets/demo/chart-area-demo.js"></script>
+  <script src="assets/demo/chart-bar-demo.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
-  <script src="/js/datatables-simple-demo.js"></script>
-  <script src="/script1.js"></script>
+  <script src="js/datatables-simple-demo.js"></script>
+  <script src="script1.js"></script>
 </body>
 </html>

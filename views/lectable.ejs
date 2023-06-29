@@ -42,7 +42,7 @@
               Lectures
             </a>
             <br>
-            <a class="nav-link" href="/Attendance Report">
+            <a class="nav-link" href="/attendtable">
               <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
               Attendance Report
             </a>
@@ -70,8 +70,9 @@
               <tr>
                 <td> <%= lec.name %> </td>
                 <td><%= lec.email %></td>
-                <td><%= lec.password %></td>
                 <td><%= lec.course%></td>
+                <td><%= lec.password %></td>
+               
                 <td class="actions">
                   <a href="/edit/<%= lec.Id %>" class="btn btn-update">Update</a>
                   <a href="/delete/<%= lec.Id %>" class="btn btn-delete">Delete</a>
