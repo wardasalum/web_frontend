@@ -6,8 +6,8 @@ const app = express();
 app.use(express.static('public'));
 
 // Server Listening
-app.listen(3002, () => {
-    console.log('Server is running at port 3002');
+app.listen(3005, () => {
+    console.log('Server is running at port 3005');
 });
 
 const mysql = require('mysql');
@@ -92,6 +92,8 @@ app.get('/delete/:id', (req, res) => {
     });
 });
 
+
+
 //Update lecture
 // Render the edit form
 app.get('/edit/:id', (req, res) => {
@@ -168,43 +170,71 @@ app.post('/sub', (req, res) => {
   
   //delete the form attend
 
-  app.get('/delet/:id', (req, res) => {
+
+app.get('/delet/:id', (req, res) => {
     const attendanceId = req.params.id;
     const sql = 'DELETE FROM attend WHERE Id = ?';
     connection.query(sql, [attendanceId], (err, result) => {
-        if (err) throw err;
-        console.log(`Deleted attendance record with ID ${attendanceId}`);
-        res.redirect('/attendtable');
+      if (err) throw err;
+      console.log(`Deleted attendance record with ID ${attendanceId}`);
+      res.sendStatus(200); // Send a success response to the client
     });
-});
+  });
 
 //Update attendance
 // Render the edit form
+// ...
+// Render the edit attendance form
 app.get('/edit1/:id', (req, res) => {
-    const attendanceId= req.params.id;
-    let sql = "SELECT * FROM attend WHERE Id = ?";
-    let query = connection.query(sql, [attendanceId], (err, rows) => {
+    const attendanceId = req.params.id;
+    const sql = "SELECT * FROM attend WHERE Id = ?";
+    connection.query(sql, attendanceId, (err, result) => {
         if (err) throw err;
-        res.render('editattend', {
-            title: 'editncepage',
-            attend: rows[0] // Assuming there is only one attendance returned from the query
-        });
+        if (result.length > 0) {
+            const attend = result[0];
+            res.render('editattend', { attend }); // Pass the 'attend' object to the template
+        } else {
+            res.send('Attendance record not found');
+        }
     });
 });
-// Handle form submission for editing attendance
-app.post('/edit1/:id', (req, res) => {
+
+
+
+
+  
+  // Handle form submission for edit attendance
+  app.post('/edit1/:id', (req, res) => {
     const attendanceId = req.params.id;
-    const lecturerID = req.body.username;
-    const studentID = req.body.stu;
+    const teacherId = req.body.username;
+    const studentId = req.body.stu;
     const yearOfStudy = req.body.year;
     const date = req.body.date;
     const attendanceStatus = req.body.status1;
-    
+  
     const sql = "UPDATE attend SET Id=?, stuid=?, year=?, date=?, status=? WHERE Id=?";
-    connection.query(sql, [attendanceId,lecturerID, studentID, yearOfStudy, date, attendanceStatus ], (err, result) => {
+    connection.query(sql, [teacherId, studentId, yearOfStudy, date, attendanceStatus, attendanceId], (err, result) => {
+      if (err) throw err;
+      console.log(`Updated attendance with ID ${attendanceId}`);
+      res.redirect('/attendtable');
+    });
+  });
+  
+
+// API to fetch form data in JSON format
+app.get('/formData/api/v1', (req, res) => {
+    let sql = "SELECT * FROM lecture";
+    let query = connection.query(sql, (err, rows) => {
         if (err) throw err;
-        console.log(`Updated attendance record with ID ${attendanceId}`);
-        res.redirect('/attendtable');
+        res.json(rows);
+    });
+});
+
+app.get('/TableData/api/v1', (req, res) => {
+    let sql = "SELECT * FROM attend";
+    let query = connection.query(sql, (err, rows) => {
+        if (err) throw err;
+        res.json(rows);
     });
 });
 

@@ -7,14 +7,94 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
   <title>Dashboard </title>
-  
   <link rel="stylesheet" type="text/css" href="/styles1.css">
-
   <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
   <link href="/css/styles.css" rel="stylesheet" />
   <link href="/attenstyle.css" rel="stylesheet" />
   <link href="/css/styles1.css" rel="stylesheet" />
   <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+  <style>
+.container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 300px;
+  margin: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+.card {
+  width: 300px;
+  margin: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  background-color: #f5f5f5;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+
+
+
+  </style>
 </head>
 <body class="sb-nav-fixed">
   <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -52,22 +132,40 @@
     </div>
     <div id="layoutSidenav_content">
       <main class="main-content">
-        <div class="summary-card">
-            <div class="card present">
-                <h2>Present</h2>
-                <p id="presentCount">0</p>
+        <br><br><br>
+        <div class="container-fluid">
+          <h2>LEVEL </h2>
+          <div class="card-grid">
+            <div class="card">
+              <img src="/images/book.jpg" alt="Course 1">
+              <div class="card-content">
+                <h3>CERTIFICATE</h3>
+                <p>For ICT</p>
+              </div>
             </div>
-            <div class="card absent">
-                <h2>Absent</h2>
-                <p id="absentCount">0</p>
+            <div class="card">
+              <img src="/images/diplm.jpg" alt="Course 2">
+              <div class="card-content">
+                <h3>DIPLOMA</h3>
+                <p>For BSE,BCS</p>
+              </div>
             </div>
-            <div class="card lecturer">
-                <h2>Lecturer</h2>
-                <p id="lecturerCount">0</p>
+            <div class="card">
+              <img src="/images/degree.jpg" alt="Course 3">
+              <div class="card-content">
+                <h3>DEGREE</h3>
+                <p>For BSE,BAGES,BITAM,BCS</p>
+              </div>
             </div>
-            </div>
-
+          </div>
+      
+         
+        </div>
         
+         
+        
+        
+
         
       </main>
     </div>

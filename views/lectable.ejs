@@ -27,7 +27,7 @@
         <div class="sb-sidenav-menu">
           <div class="nav">
             <br><br><br>
-            <a class="nav-link" href="/index">
+            <a class="nav-link" href="/">
               <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
               Dashboard
             </a>
@@ -72,10 +72,10 @@
                 <td><%= lec.email %></td>
                 <td><%= lec.course%></td>
                 <td><%= lec.password %></td>
-               
                 <td class="actions">
                   <a href="/edit/<%= lec.Id %>" class="btn btn-update">Update</a>
                   <a href="/delete/<%= lec.Id %>" class="btn btn-delete">Delete</a>
+                  
                 </td>
               </tr>
               <% }); %>

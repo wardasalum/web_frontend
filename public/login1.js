@@ -10,7 +10,7 @@ function submitFun(elme) {
 
     if (username == "warda" && password == "warda") {
        
-        window.location.href = "index.html";
+        window.location.href = "/";
     } else {
         alert("Invalid username or password");
         document.querySelector("#form").reset();
