@@ -8,9 +8,9 @@ function submitFun(elme) {
     username = document.querySelector("#name").value;
     password =  document.querySelector("#password").value;
 
-    if (username == "admin" && password == "warda") {
+    if (username == "warda" && password == "warda") {
        
-        window.location.href = "Index";
+        window.location.href = "index.html";
     } else {
         alert("Invalid username or password");
         document.querySelector("#form").reset();

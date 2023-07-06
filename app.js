@@ -6,8 +6,8 @@ const app = express();
 app.use(express.static('public'));
 
 // Server Listening
-app.listen(3005, () => {
-    console.log('Server is running at port 3005');
+app.listen(3006, () => {
+    console.log('Server is running at port 3006');
 });
 
 const mysql = require('mysql');
@@ -35,7 +35,21 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 // Render the form page
+
+
 app.get('/', (req, res) => {
+    res.render('login', {
+       title: 'loginpage',
+   });
+});
+
+  
+
+  
+
+
+
+app.get('/Index', (req, res) => {
     let sql = "SELECT * FROM lecture";
     let query = connection.query(sql, (err, rows) => {
         if(err) throw err;
@@ -51,6 +65,32 @@ app.get('/lectures', (req, res) => {
     }
     );
 });
+
+app.get('/Register', (req, res) => {
+    let sql = "SELECT * FROM users";
+    let query = connection.query(sql, (err, rows) => {
+        if (err) throw err;
+    res.render('register',{
+        title:'registerPage'
+    });
+});
+});
+app.post('/su', (req, res) => {
+    // Access form data from the request body
+    const username  = req.body.name1;
+    const email = req.body.email1;
+    const password = req.body.pas;
+    const comfirm = req.body.cp;
+  
+    // Insert the form data into the database
+    const sql = "INSERT INTO users (Username, email, password, confirm) VALUES (?, ?, ?, ?)";
+    connection.query(sql, [username,email,password,comfirm], (err, result) => {
+      if (err) throw err;
+      console.log("Record inserted successfully");
+      res.redirect('/Register');
+    
+    });
+  });
 app.get('/Lectable', (req, res) => {
     let sql = "SELECT * FROM lecture";
     let query = connection.query(sql, (err, rows) => {
@@ -243,22 +283,25 @@ app.get('/TableData/api/v1', (req, res) => {
 
 // for attendanceReport
 
-app.get('/Attendtable', (req, res) => {
-    let sql = "SELECT * FROM attend";
+app.get('/attendancereport', (req, res) => {
+    res.render('AttendanceReport',{
+        title:'Attendancepage'
+    }
+    );
+  });
+
+app.get('/attend', (req, res) => {
+    let sql = "select * from attend";
+    
     let query = connection.query(sql, (err, rows) => {
         if (err) throw err;
-        res.render('attendtable', {
+        res.render('AttendanceReport', {
             title: 'attendancetable',
             attend :rows // Pass the lecture data to the template
         });
     });
 });
 
-app.get('/Login', (req, res) => {
-        res.render('login', {
-            title: 'loginpage',
-        });
-    });
 
 
-  
+

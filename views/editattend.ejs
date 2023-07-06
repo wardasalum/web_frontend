@@ -28,7 +28,7 @@
         <div class="sb-sidenav-menu">
           <div class="nav">
             <br><br><br>
-            <a class="nav-link" href="/index">
+            <a class="nav-link" href="/Index">
               <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
               Dashboard
             </a>
@@ -55,29 +55,29 @@
       <main class="main-content">
         <br>
         <h2 style="text-align: center;">Edit Attendance</h2>
-          <form class="form-style-9" action=""  method="POST">
+          <form class="form-style-9" action="/edit1/<%= attend.Id %>"  method="POST">
    
 
             <ul>
                 <li>
-                 Leacturer ID: <input type="text" name="username"   class="field-style field-split align-right" placeholder="Enter TeacherID" />
+                 Leacturer ID: <input type="text" name="username"  value="<%= attend.Id %>" class="field-style field-split align-right" placeholder="Enter TeacherID" />
                 
                 </li>
             <li>
-                Student ID:  <input type="text" name="stu"  class="field-style field-split align-right" placeholder="Enter studentid" />
+                Student ID:  <input type="text" name="stu" value="<%= attend.stuid%>" class="field-style field-split align-right" placeholder="Enter studentid" >
             </li>
             <li>
-             Year of study:<select class="field-style field-split align-right" name="year"   >
+             Year of study:<select class="field-style field-split align-right" name="year" value="<%= attend.year%>" placeholder="enter a year" required >
                     <option value="first">First year</option>
                     <option value="second">Second year</option>
                     <option value="third">Third year</option>
                 </select>
             </li>
             <li>
-                Date:  <input type="date" name="date" value="<%= attend.date %>"class="field-style field-split align-right" placeholder="Enter date" />
+                Date:  <input type="date" name="date" value="<%= attend.date %>"class="field-style field-split align-right" placeholder="Enter date" >
             </li>
             <li>
-               AttendanceStatus:<select class="field-style field-split align-right" name="status1"   >
+               AttendanceStatus:<select class="field-style field-split align-right" name="status1" value="<%= attend.status%>" >
                 <option value="Present">Present</option>
                 <option value="Absent">Absent</option>
             </select>
